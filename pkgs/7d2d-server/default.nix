@@ -33,7 +33,6 @@ stdenv.mkDerivation rec {
         platform.cfg \
         steamclient.so \
         UnityPlayer.so \
-        serverconfig.xml \
         $out
 
         chmod +x $out/7DaysToDieServer.x86_64

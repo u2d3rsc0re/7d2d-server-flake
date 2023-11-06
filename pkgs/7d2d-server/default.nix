@@ -11,7 +11,7 @@ stdenv.mkDerivation rec {
         appId = "294420";
         depotId = "294422";
         manifestId = "4485042179748822610";
-        hash = "";
+        hash = "sha256-S2xCAZj8/KPen2yKb10923ZS74cC8tNxu6qvICmwaH8=";
     };
 
     dontBuild = true;

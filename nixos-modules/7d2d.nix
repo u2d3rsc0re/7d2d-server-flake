@@ -179,7 +179,7 @@ in {
             serviceConfig = {
                 type = "exec";
                 user = "7d2d";
-                ExecStart = "${pkgs._7d2d-server}/7DaysToDieServer.x86_64 -logfile /var/log/7d2d/output_log__`date +%Y-%m-%d__%H-%M-%S`.txt -quit -batchmode -nographics -dedicated -configfile=/var/lib/7d2d/serverconfig.xml";
+                ExecStart = "${pkgs._7d2d-server}/bin/_7d2d-server -logfile /var/log/7d2d/output_log__`date +%Y-%m-%d__%H-%M-%S`.txt -quit -batchmode -nographics -dedicated -configfile=/var/lib/7d2d/serverconfig.xml";
                 StateDirectory = "7d2d";
             };
         };

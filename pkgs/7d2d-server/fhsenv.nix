@@ -1,7 +1,5 @@
 {
-    lib,
     buildFHSUserEnv,
-    writeScript,
     _7d2d-server-unwrapped,
     steamworks-sdk-redist,
 }:

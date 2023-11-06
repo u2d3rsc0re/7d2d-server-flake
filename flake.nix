@@ -1,5 +1,5 @@
 {
-    description = "NixOs module for the 7 Days to Die dedicated server";
+    description = "NixOs module for the 7 Days to Die Dedicated server";
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";

@@ -149,13 +149,13 @@
         '';
     };
 in {
+    config.nixpkgs.overlays = [self.overlays.default steam-fetcher.overlays.default];
     options.services."7d2d" = {
         enable = lib.mkEnableOption (lib.mdDoc "7 Days to Die Dedicated Server");
     };
 
-    config = lib.mkIf cfg.enable {
-        nixpkgs.overlays = [self.overlays.default steam-fetcher.overlays.default];
-        users = {
+    config =  {
+        users = lib.mkIf cfg.enable {
             users."7d2d" = {
                 isSystemUser = true;
                 group = "7d2d";
@@ -164,7 +164,7 @@ in {
             groups."7d2d" = {};
         };
 
-        systemd.services."7d2d" = {
+        systemd.services."7d2d" = lib.mkIf cfg.enable {
             description = "7 Days to Die dedicated server";
             requires = ["network.target"];
             after = ["network.target"];

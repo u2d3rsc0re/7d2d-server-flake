@@ -6,7 +6,7 @@
 buildFHSUserEnv {
     name = "_7d2d-server";
 
-    runScript = "7DaysToDieServer.x86_64";
+    runScript = "${_7d2d-server-unwrapped}/7DaysToDieServer.x86_64";
 
     targetPkgs = pkgs: [
         _7d2d-server-unwrapped

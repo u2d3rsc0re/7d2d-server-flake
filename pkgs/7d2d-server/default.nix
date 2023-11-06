@@ -10,7 +10,7 @@ stdenv.mkDerivation rec {
         inherit name;
         appId = "294420";
         depotId = "294422";
-        # manifestId = "294420";
+        manifestId = "11888696";
         hash = "";
     };
 

@@ -9,8 +9,8 @@ stdenv.mkDerivation rec {
     src = fetchSteam {
         inherit name;
         appId = "294420";
-        depotId = "294420";
-        manifestId = "294420";
+        # depotId = "294420";
+        # manifestId = "294420";
         hash = "";
     };
 

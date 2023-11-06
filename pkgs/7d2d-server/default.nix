@@ -3,7 +3,7 @@
     stdenv,
     fetchSteam,
 }:
-stdenv.mkDeriviation rec {
+stdenv.mkDerivation rec {
     name = "_7d2d-server";
     version = "A21.1";
     src = fetchSteam {

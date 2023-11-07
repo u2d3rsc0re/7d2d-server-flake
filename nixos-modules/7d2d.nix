@@ -171,6 +171,7 @@ in {
             wantedBy = ["multi-user.target"];
 
             preStart = ''
+                cp --force "${pkgs._7d2d-server-unwrapped}/*" "$STATE_DIRECTORY/serverconfig.xml"
                 cp --force "${configFile}" "$STATE_DIRECTORY/serverconfig.xml"
                 chmod 600 "$STATE_DIRECTORY/serverconfig.xml"
             '';
@@ -178,8 +179,9 @@ in {
             serviceConfig = {
                 type = "exec";
                 user = "7d2d";
-                ExecStart = "${pkgs._7d2d-server}/bin/_7d2d-server -logfile /var/log/7d2d/output_log__`date +%Y-%m-%d__%H-%M-%S`.txt -quit -batchmode -nographics -dedicated -configfile=/var/lib/7d2d/serverconfig.xml";
+                ExecStart = "${pkgs._7d2d-server-unwrapped}/7Days -logfile /var/log/7d2d/output_log__`date +%Y-%m-%d__%H-%M-%S`.txt -quit -batchmode -nographics -dedicated -configfile=/var/lib/7d2d/serverconfig.xml";
                 StateDirectory = "7d2d";
+                RuntimeDirectory = "7d2d";
             };
         };
     };
